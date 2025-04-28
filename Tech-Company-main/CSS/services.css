@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* { margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a{
+    color: white;
+    text-decoration:none;
+}
+
+
+
+/* The Navigation Bar */
+header{
+    display:flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: rgba(4, 4, 51, 0.418);
+    margin: -8px -8px;
+    background-attachment: fixed;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.logo{
+    font-size: 35px;
+    text-transform: capitalize;
+    padding-left: 10px;
+}
+
+ul{
+    list-style:none ;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+ul a{
+    border-bottom: 2px solid transparent;
+    color: white;
+    text-decoration: none;
+} 
+ul a:hover{
+    border-bottom-color: white;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to right ,rgba(38, 5, 129, 0.590) ,rgba(0, 0, 0, 0.600))
+,url(../MEDIA/background.jpg)
+;
+background-position: center; 
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+overflow: hidden;
+}
+
+.service-wrapper{
+    padding:5% 8%;
+
+}
+
+.service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    color:white;
+    font-size: 5rem;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: transparent;
+    letter-spacing: 4px;
+    background-color: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+h1:after{
+    content:"";
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    height:8px;
+    width:80%;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+h1 span{
+    position:absolute;
+    top:100%;
+    left:10%;
+    height:8px;
+    width:8px;
+    border-radius: 50%;
+    background-color: #72e2ae;
+    animation:animation 4s linear infinite;
+}
+
+@keyframes animation{
+    95%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        left:89%;
+    }
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:30px;
+    margin-top: 80px;
+}
+.card{
+    height: 350px;
+    width: 370px;
+    background-color: #081d52 ;
+    padding: 3% 8%;
+    border: 0.2px solid rgba(200, 152, 255, 0.932);
+    border-radius: 8px;
+    transition: 0.6s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:after{
+    content: "";
+    position: absolute;
+    top: 150%;
+    left: -200px;
+    width: 120%;
+    transform: rotate(50deg);
+    background-color: #ffffff;
+    height: 18px;
+    filter: blur(30px);
+    opacity: 0.5;
+    transition: 1s;
+}
+
+.card:hover::after{
+    width: 225%;
+    top: -100%;
+}
+
+.card i{
+    color:#fbfffd;
+    margin-top:30px;
+    margin-bottom: 20px;
+    font-size: 4.8rem;
+}
+
+.card h2{
+    color:#ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.card p{
+    text-align: center;
+    width: 100%;
+    margin:12px 0;
+    color: rgba(255, 255, 255, 0.6);
+}
+.card:hover{
+    background-color: transparent;
+    transform: translateY(-8px);
+    border-color:#e24c9a ;
+}
+
+.card:hover i{
+    color: #e24c9a;
+}
+
+@media screen and (max-width:1200px){
+    .cards{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width:900px){
+    .cards{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
